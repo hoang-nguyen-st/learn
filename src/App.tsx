@@ -6,12 +6,14 @@ export default function MyInput() {
   function handleChange(e: FormEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
   }
-
+ function handleReset() {
+    setText('');
+ }
   return (
     <>
       <input value={text} onChange={handleChange} />
       <p>You typed: {text}</p>
-      <button onClick={() => setText('hello')}>
+      <button onClick={handleReset}>
         Reset
       </button>
     </>
